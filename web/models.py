@@ -1,6 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import AbstractUser
-
+from django.db import models
 
 class User(AbstractUser):
     ROLE_CHOICES = [
@@ -9,8 +8,29 @@ class User(AbstractUser):
         ('cleaner', 'Уборщик'),
     ]
 
-    role = models.CharField(max_length=20, choices=ROLE_CHOICES)
+    role = models.CharField(
+        max_length=20,
+        choices=ROLE_CHOICES,
+        default='receptionist'
+    )
     full_name = models.CharField(max_length=100)
+
+    groups = models.ManyToManyField(
+        'auth.Group',
+        verbose_name='groups',
+        blank=True,
+        help_text='Группы, к которым принадлежит пользователь',
+        related_name="custom_user_groups",
+        related_query_name="custom_user",
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        verbose_name='user permissions',
+        blank=True,
+        help_text='Специальные права для пользователя',
+        related_name="custom_user_permissions",
+        related_query_name="custom_user",
+    )
 
     class Meta:
         verbose_name = 'Пользователь'
