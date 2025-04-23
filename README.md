@@ -32,6 +32,8 @@
 - 'python -m venv venv' - создание виртуального окружения
 - 'source venv/bin/activate' - вход в виртуальное окружение
 - 'pip install -r requirements.txt' - установка зависимостей
+- 'docker compose up -d' - запуск дополнительных сервисов в Docker.
+  - [PostgreSQL](https://www.postgresql.org/)
 - 'python manage.py migrate' - применение миграций
 - 'python manage.py runserver' - запуск сервера для разработки на http://127.0.0.1:8080
 
