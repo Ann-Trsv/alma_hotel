@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:15-alpine
+    ports:
+      - "5433:5432"
+    environment:
+      POSTGRES_DB: alma_hotel
+      POSTGRES_USER: alma_hotel
+      POSTGRES_PASSWORD: alma_hotel
+    volumes:
+      - "db:/var/lib/postgresql/data"
+
+volumes:
+  db:

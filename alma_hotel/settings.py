@@ -77,9 +77,9 @@ WSGI_APPLICATION = 'alma_hotel.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'almahotel',
-        'USER': 'almahotel',
-        'PASSWORD': 'almahotel',
+        'NAME': 'alma_hotel',
+        'USER': 'alma_hotel',
+        'PASSWORD': 'alma_hotel',
         'HOST': 'localhost',
         'PORT': '5433',
     }
